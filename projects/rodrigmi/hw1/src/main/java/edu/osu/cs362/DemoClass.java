@@ -42,7 +42,7 @@ public class DemoClass
 
     // static calling static OK
     // static calling instance is a compile-time error
-    public void s2() {
+    public static void s2() {
 //        i1();     // compile-time error
         s1();       // DemoClass.s1
         return;
