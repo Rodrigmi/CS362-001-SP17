@@ -56,6 +56,8 @@ public class ApptTest {
 		          title,
 		         description);
 		appt.toString(); 
+
+		assertEquals(false, appt.getValid());
 	}
 	 @Test
 	 public void test03()  throws Throwable  {
@@ -74,6 +76,8 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
+		 
+		 assertEquals(false, appt.getValid());
 	}
 	 @Test
 	 public void test04()  throws Throwable  {
@@ -92,6 +96,7 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
+		 assertEquals(false, appt.getValid());
 	 }
 	 @Test
 	 public void test05()  throws Throwable  {
@@ -110,6 +115,8 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
+
+		 assertEquals(false, appt.getValid());
 	}
 	@Test
 	 public void test06()  throws Throwable  {
@@ -128,6 +135,7 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
+		 assertEquals(false, appt.getValid());
 	}
 	@Test
 	 public void test07()  throws Throwable  {
@@ -146,6 +154,7 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
+		 assertEquals(false, appt.getValid());
 	}
 	@Test
 	public void test08()  throws Throwable  {
@@ -164,6 +173,7 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
+		 assertEquals(false, appt.getValid());
 	}
 	@Test
 	public void test09()  throws Throwable  {
@@ -182,6 +192,8 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
+
+		 assertEquals(false, appt.getValid());
 	}
 	 @Test
 	  public void test10()  throws Throwable  {

@@ -25,6 +25,8 @@ public class TimeTableTest {
 		 LinkedList<Appt> appts = new LinkedList<Appt>();
 
 		 timetable.getApptRange(appts,day1,day2);
+
+		assertNotNull(timetable.getApptRange(appts, day1, day2));
 	 }
 	 @Test
 	  public void test02()  throws Throwable  {
@@ -36,6 +38,8 @@ public class TimeTableTest {
 		 LinkedList<Appt> appts = new LinkedList<Appt>();
 
 		 timetable.getApptRange(appts,day1,day2);
+
+		 assertEquals(null,timetable.getApptRange(appts, day1, day2));
 	 }
 	 @Test
 	  public void test03()  throws Throwable  {
@@ -58,6 +62,8 @@ public class TimeTableTest {
 	  	 calday.addAppt(appttt);
 
 		 timetable.getApptRange(calday.getAppts(),day1,day2);
+
+		 assertNotNull(timetable.getApptRange(calday.getAppts(), day1, day2));
 	 }
 	 @Test
 	  public void test04()  throws Throwable  {
@@ -92,6 +98,8 @@ public class TimeTableTest {
 	  	 calday.addAppt(apptt);
 
 		 timetable.getApptRange(calday.getAppts(),day1,day2);
+
+		 assertNotNull(timetable.getApptRange(calday.getAppts(), day1, day2));
 	 }
 	 @Test
 	  public void test05()  throws Throwable  {
@@ -115,6 +123,8 @@ public class TimeTableTest {
 	  	 LinkedList<Appt> appts = new LinkedList<Appt>();
 
 		 timetable.deleteAppt(calday.getAppts(),appt);
+
+		 assertEquals(2, calday.getSizeAppts());
 	 }
 	 @Test
 	  public void test06()  throws Throwable  {
@@ -133,6 +143,8 @@ public class TimeTableTest {
 	  	 appts = null;
 
 		 timetable.deleteAppt(appts,appt);
+
+		 assertNotNull(timetable.getApptRange(calday.getAppts(), day1, day2));
 	 }
 	 @Test
 	  public void test07()  throws Throwable  {
@@ -157,6 +169,8 @@ public class TimeTableTest {
 	  	 appt = null;
 
 		 timetable.deleteAppt(calday.getAppts(),appt);
+
+		 assertNotNull(timetable.getApptRange(calday.getAppts(), day1, day2));
 	 }
 	 @Test
 	  public void test08()  throws Throwable  {
@@ -179,5 +193,7 @@ public class TimeTableTest {
 	  	 calday.addAppt(appttt);
 
 		 timetable.deleteAppt(calday.getAppts(),appt);
+
+		 assertEquals(2, calday.getSizeAppts());
 	 }
 }

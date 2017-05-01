@@ -18,14 +18,18 @@ public class CalDayTest {
 	 @Test
 	 public void test01()  throws Throwable  {
 
-	  	CalDay calday = new CalDay();  	
+	  	CalDay calday = new CalDay();
+
+	  	assertEquals(false, calday.isValid());  	
 	 }
 	 @Test
 	 public void test02()  throws Throwable  {
 
 	  	GregorianCalendar cal = new GregorianCalendar();
 
-	  	CalDay calday = new CalDay(cal);	
+	  	CalDay calday = new CalDay(cal);
+
+	  	assertEquals(true, calday.isValid()); 	
 	 }
 	 /*@Test
 	 public void test03()  throws Throwable  {
@@ -48,22 +52,24 @@ public class CalDayTest {
 	 @Test
 	 public void test04()  throws Throwable  {
 
-	  	GregorianCalendar cal = new GregorianCalendar();
+	  	GregorianCalendar cal = new GregorianCalendar(2017,4,28);
 
 	  	CalDay calday = new CalDay(cal);
 	  
-	  	calday.getAppts();
-	  	calday.getSizeAppts();
-	  	calday.getDay();
-	  	calday.getMonth();
-	  	calday.getYear();
-	  	calday.toString();	
+	  	assertNotNull(calday.getAppts());
+	  	assertEquals(0, calday.getSizeAppts());
+	  	assertEquals(28, calday.getDay());
+	  	assertEquals(4, calday.getMonth());
+	  	assertEquals(2017, calday.getYear());
+	  	assertNotNull(calday.toString());	
 	 }
 	 @Test
 	 public void test05()  throws Throwable  {
 
 	  	CalDay calday = new CalDay();
-	  	calday.toString();  	
+	  	calday.toString();
+	  	
+	  	assertEquals(false, calday.isValid());	 	
 	 }
 	 @Test
 	 public void test06()  throws Throwable  {
@@ -78,6 +84,8 @@ public class CalDayTest {
 	  	calday.addAppt(appt);
 	  	calday.addAppt(apptt);
 	  	calday.addAppt(appttt);
+
+	  	assertEquals(3, calday.getSizeAppts());
 	 }
 	 @Test
 	 public void test07()  throws Throwable  {
@@ -92,6 +100,8 @@ public class CalDayTest {
 	  	calday.addAppt(appttt);
 	  	calday.addAppt(apptt);
 	  	calday.addAppt(appt);
+
+	  	assertEquals(3, calday.getSizeAppts());
 	 }
 	  @Test
 	 public void test08()  throws Throwable  {
@@ -109,12 +119,16 @@ public class CalDayTest {
 	  	GregorianCalendar cal = new GregorianCalendar();
 	  	CalDay calday = new CalDay(cal);		          
 	  	calday.iterator();
+
+	  	assertEquals(true, calday.isValid());	
 	 }
 	 @Test
 	 public void test10()  throws Throwable  {
 
 	  	CalDay calday = new CalDay();
 	  	calday.iterator();
+
+	  	assertEquals(false, calday.isValid());	
 	 }
 	 @Test
 	 public void test11()  throws Throwable  {
@@ -125,6 +139,8 @@ public class CalDayTest {
 	  	Appt appt = new Appt(1,1,1,1,1,"a","b");
 		          
 	  	calday.addAppt(appt);
+
+	  	assertEquals(1, calday.getSizeAppts());
 	 }
 	 @Test
 	 public void test12()  throws Throwable  {
@@ -139,7 +155,10 @@ public class CalDayTest {
 	  	calday.addAppt(appt);
 	  	calday.addAppt(apptt);
 	  	calday.addAppt(appttt);
-	  	calday.toString();	
+	  	calday.toString();
+
+	  	assertEquals(true, calday.isValid());
+	  	assertEquals(3, calday.getSizeAppts());	
 	 }
 
 	
